@@ -5,7 +5,6 @@ export const fetchHomepageData = createAsyncThunk("homepageData/fetch", async(_,
     
     const {user} = thunkApi.getState()
     try {
-
         const response = await fetch("/homepagedata",{
             method:"GET",
             headers:{
@@ -15,6 +14,7 @@ export const fetchHomepageData = createAsyncThunk("homepageData/fetch", async(_,
         })
 
         const res =  await response.json()
+
         return res
     } catch (error) {
         throw new Error

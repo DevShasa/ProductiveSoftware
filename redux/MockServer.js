@@ -22,7 +22,7 @@ export const startMirageServer = () => {
                 const headers = request.requestHeaders
                 const {api_key, secret_key} = headers
                 if(api_key === APIKEY && secret_key === SECRETKEY){
-                    return {...fakedata}
+                    return {...fakedata()}
 
                 }else{
                     return {error:"Not Authorised"}
